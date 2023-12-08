@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shields Badge Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Shields Badge Generator</h1>
+    <label for="input-text">Left Text:</label>
+    <input type="text" id="input-text" placeholder="Optional left text">
+    <label for="input-text-right">Right Text:</label>
+    <input type="text" id="input-text-right" placeholder="Required right text">
+    <label for="input-color">Text Color:</label>
+    <input type="text" id="input-color"
+        placeholder="Optional text color (hex, rgb, rgba, hsl, hsla or css named color)">
+    <label for="input-url">Link to:</label>
+    <input type="text" id="input-url" placeholder="Optional link url">
+    <br><br>
+    <button onclick="generateBadge()">Generate Badge</button>
+    <div class="result" id="result-html"></div>
+    <div class="result" id="result-md"></div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
