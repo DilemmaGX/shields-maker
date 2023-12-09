@@ -8,17 +8,23 @@
 
 <body>
     <h1>Shields Badge Generator</h1>
-    <a href="http://github.com/dilemmaGX"><img src="https://img.shields.io/badge/Author-DilemmaGX-default" alt="Author - DilemmaGX"></a>
-    <a href="http://github.com/dilemmaGX/shields-maker"><img src="https://img.shields.io/badge/Contribute-Shields--maker-default" alt="Author - DilemmaGX"></a>
-    <label for="input-text">Left Text:</label>
+    <a href="http://github.com/dilemmaGX"><img src="https://img.shields.io/badge/Author-DilemmaGX-default"
+            alt="Author - DilemmaGX"></a>
+    <a href="http://github.com/dilemmaGX/shields-maker"><img
+            src="https://img.shields.io/badge/Contribute-Shields--maker-default" alt="Author - DilemmaGX"></a>
+    <label for="input-text">Left text:</label>
     <input type="text" id="input-text" placeholder="Optional left text">
-    <label for="input-text-right">Right Text:</label>
+    <label for="input-text-right">Right text:</label>
     <input type="text" id="input-text-right" placeholder="Required right text">
-    <label for="input-color">Text Color:</label>
+    <label for="input-color">Text color:</label>
     <input type="text" id="input-color"
         placeholder="Optional text color (hex, rgb, rgba, hsl, hsla or css named color)">
     <label for="input-url">Link to:</label>
     <input type="text" id="input-url" placeholder="Optional link url">
+    <label for="input-logo">Logo:</label>
+    <input type="text" id="input-logo" placeholder="Optional logo">
+    <label for="input-logo-color">Logo color:</label>
+    <input type="text" id="input-logo-color" placeholder="Optional logo color">
     <br><br>
     <button onclick="generateBadge()">Generate Badge</button>
     <div class="result" id="result-html"></div>
