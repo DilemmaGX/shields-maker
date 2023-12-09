@@ -53,6 +53,10 @@ button.disabled {
 .result {
     margin-top: 20px;
     font-size: 14px;
+    line-height: 1.5;
+    font-family: Consolas, monospace;
+    max-width: 700px;
+    width: 100%;
 }
 
 .result code {
@@ -70,4 +74,15 @@ button.disabled {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
+}
+
+select {
+    max-width: 100px;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;;
 }
