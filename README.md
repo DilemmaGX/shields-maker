@@ -2,7 +2,7 @@
 Make and preview simple static badges markdown scripts for non-programmer users
 ## Parameters Coverage
 - [x] `badgeContent`
-- [ ] `style`
+- [x] `style`
 - [x] `logo`
 - [x] `logoColor`
 - [ ] `label`
