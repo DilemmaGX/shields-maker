@@ -13,6 +13,10 @@ function rgbToHex(rgb) {
     return hexColor;
 }
 
+function replaceSingleDash(str) {
+    return str.replace(/(?<!-)-(?!-)/g, "--");
+}
+
 function escapeHtml(html) {
     return html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -31,8 +35,8 @@ function checkInput() {
 }
 
 function generateBadge() {
-    var leftText = document.getElementById('input-text').value || '';
-    var rightText = document.getElementById('input-text-right').value || '';
+    var leftText = replaceSingleDash(document.getElementById('input-text').value) || '';
+    var rightText = replaceSingleDash(document.getElementById('input-text-right').value) || '';
     var textColor = rgbToHex(getComputedStyle(document.getElementById('input-color')).getPropertyValue("background-color")) || '';
     var url = document.getElementById('input-url').value || '';
     var logo = document.getElementById('input-logo').value || '';
