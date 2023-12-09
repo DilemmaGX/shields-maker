@@ -25,10 +25,19 @@
         <input type="text" id="input-logo" placeholder="Optional logo">
         <label for="input-logo-color">Logo color:</label>
         <div class="selected-color" id="input-logo-color"></div>
-        <br><br>
+        <br>
+        <select id="styleSelect">
+            <option value="flat">flat</option>
+            <option value="flat-square">flat-square</option>
+            <option value="plastic">plastic</option>
+            <option value="for-the-badge">for-the-badge</option>
+            <option value="social">social</option>
+        </select>
         <button onclick="generateBadge()" id="g_button">Generate Badge</button>
-        <div class="result" id="result-html"></div>
-        <div class="result" id="result-md"></div>
+
+        <div class="result" id="result-html"><a href="http://github.com/DilemmaGX"><img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"></a></div>
+        <div class="result"><code id="result-pure">&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code></div>
+        <div class="result"><code id="result-md">[![Hello](https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff)](http://github.com/DilemmaGX)</code></div>
 
         <script src="index.js"></script>
 
