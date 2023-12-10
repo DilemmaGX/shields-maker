@@ -13,6 +13,14 @@ function rgbToHex(rgb) {
     return hexColor;
 }
 
+function copyText(id) {
+    var text = document.getElementById(id).innerText;
+    var input = document.getElementById("copy-cache");
+    input.value = text; // 修改文本框的内容
+    input.select(); // 选中文本
+    document.execCommand("copy"); // 执行浏览器复制命令
+}
+
 function replaceSingleDash(str) {
     return str.replace(/(?<!-)-(?!-)/g, "--");
 }
