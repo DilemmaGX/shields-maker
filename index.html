@@ -38,7 +38,8 @@
         </div>
         <br>
         <div align="middle">
-            <button type="button" class="btn btn-primary" style="width: 150px;" onclick="auto()">Generate</button>
+            <button id="g_button" type="button" class="btn btn-primary" style="width: 150px; " onclick="auto()"
+                disabled>Generate</button>
             <br><br>
             <div id="o_img" class="img">
                 <a href="http://github.com/DilemmaGX"><img
@@ -56,4 +57,15 @@
             </div>
         </div>
     </div>
+    <script>
+        var inputElement = document.getElementById("right");
+        var buttonElement = document.getElementById("g_button");
+        inputElement.addEventListener("input", function () {
+            if (inputElement.value === "") {
+                buttonElement.setAttribute("disabled", "");
+            } else {
+                buttonElement.removeAttribute("disabled");
+            }
+        });
+    </script>
 </body>
