@@ -69,22 +69,12 @@ function auto() {
 
 function copy(id) {
     const element = document.getElementById(id);
-    if (!element) {
-        console.error(`没有找到ID为 ${id} 的元素`);
-        return;
-    }
     const textContent = element.textContent;
     navigator.clipboard.writeText(textContent)
-        .then(() => {
-            console.log('复制成功！');
-            addSuccessAlert();
-        })
-        .catch((error) => {
-            console.error('复制失败:', error);
-        });
+    addSuccessAlertSuccess("<h4>Copy success!</h4><hr><p>" + textContent.replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</p>");
 }
 
-function addSuccessAlert() {
+function addSuccessAlertSuccess(str) {
     const newAlertDiv = document.createElement('div');
     newAlertDiv.className = 'alert alert-success alert-dismissible fade show';
     newAlertDiv.role = 'alert';
@@ -96,9 +86,7 @@ function addSuccessAlert() {
     useElement.setAttribute('xlink:href', '#check-circle-fill');
     svgIcon.appendChild(useElement);
     newAlertDiv.appendChild(svgIcon);
-    const strongText = document.createElement('strong');
-    strongText.textContent = '成功！这是一个成功的警告消息。';
-    newAlertDiv.appendChild(strongText);
+    newAlertDiv.innerHTML = str;
     const closeButton = document.createElement('button');
     closeButton.type = 'button';
     closeButton.className = 'btn-close';
@@ -106,9 +94,8 @@ function addSuccessAlert() {
     closeButton.ariaLabel = 'Close';
     newAlertDiv.appendChild(closeButton);
     const alertsContainer = document.getElementById('alerts');
-    if (alertsContainer) {
-        alertsContainer.appendChild(newAlertDiv);
-    } else {
-        console.error('未找到 id 为 "alerts" 的元素。');
+    while (alertsContainer.firstChild) {
+        alertsContainer.removeChild(alertsContainer.firstChild);
     }
+    alertsContainer.appendChild(newAlertDiv);
 }
