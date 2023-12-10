@@ -27,7 +27,7 @@ input[type="text"] {
     text-align: center;
 }
 
-button {
+.g_button {
     max-width: 200px;
     width: 100%;
     padding: 5px 10px;
@@ -40,9 +40,19 @@ button {
     transition: background-color 0.3s ease;
 }
 
+.c_button {
+    padding: 5px 4px 1px;;
+    font-size: 16px;
+    border: none;
+    background-color: #0059ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 button:hover {
     background-color: #008cff;
-    /* 鼠标悬停时的背景色 */
 }
 
 button.disabled {
@@ -85,4 +95,12 @@ select {
     border-radius: 5px;
     cursor: pointer;
     text-align: center;;
+}
+
+#copy-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -10;
 }
