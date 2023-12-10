@@ -45,6 +45,7 @@ function auto() {
 
     var style = document.getElementById("style").value;
     var logoColor = document.getElementById("logoColor").value;
+    console.log(logoColor);
     var color = document.getElementById("color").value;
     var link = document.getElementById("link").value;
 
@@ -52,14 +53,14 @@ function auto() {
     var o_html = document.getElementById("o_html");
     var o_md = document.getElementById("o_md");
 
-    if (color = "" || color == undefined) {
-        color = "default";
+    if (color == "" || color == undefined) {
+        color = "green";
     }
-    if (logoColor = "" || logoColor == undefined) {
-        logoColor = "default";
+    if (logoColor == "" || logoColor == undefined) {
+        logoColor = "green";
     }
 
-    document.getElementById("o_img").innerHTML = g_html(left, right, color, style, logo, logoColor, link)
-    document.getElementById("o_html").innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    document.getElementById("o_md").innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_img.innerHTML = g_html(left, right, color, style, logo, logoColor, link)
+    o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
 }
