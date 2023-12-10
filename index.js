@@ -1,96 +1,68 @@
-function rgbToHex(rgb) {
-    // 将RGB格式的颜色值拆分为红色、绿色和蓝色的相应部分。
-    const [r, g, b] = rgb.match(/\d+/g);
-
-    // 将每个部分的整数值转换为两位的十六进制值。
-    const rHex = parseInt(r).toString(16).padStart(2, '0');
-    const gHex = parseInt(g).toString(16).padStart(2, '0');
-    const bHex = parseInt(b).toString(16).padStart(2, '0');
-
-    // 将三个部分的十六进制值合并为一个HEX格式的颜色值。
-    const hexColor = `#${rHex}${gHex}${bHex}`;
-
-    return hexColor;
-}
-
-function copyText(id) {
-    var text = document.getElementById(id).innerText;
-    var input = document.getElementById("copy-cache");
-    input.value = text; // 修改文本框的内容
-    input.select(); // 选中文本
-    document.execCommand("copy"); // 执行浏览器复制命令
-}
-
-function replaceSingleDash(str) {
-    return str.replace(/(?<!-)-(?!-)/g, "--");
-}
-
-function escapeHtml(html) {
-    return html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-}
-
-function checkInput() {
-    var input = document.getElementById("input-text-right");
-    var button = document.getElementById("g_button");
-
-    if (input.value === "") {
-        button.classList.add("disabled");
-        button.innerHTML = "Required right text";
-    } else {
-        button.classList.remove("disabled");
-        button.innerHTML = "Generate Badge";
-    }
-}
-
-function generateBadge() {
-    var leftText = replaceSingleDash(document.getElementById('input-text').value) || '';
-    var rightText = replaceSingleDash(document.getElementById('input-text-right').value) || '';
-    var textColor = rgbToHex(getComputedStyle(document.getElementById('input-color')).getPropertyValue("background-color")) || '';
-    var url = document.getElementById('input-url').value || '';
-    var logo = document.getElementById('input-logo').value || '';
-    var logoColor = rgbToHex(getComputedStyle(document.getElementById('input-logo-color')).getPropertyValue("background-color")) || '';
-    var style = document.getElementById('styleSelect').value;
-
-    // 如果rightText为空，则不执行任何操作    
-    if (rightText === '') {
-        return;  // 点击按钮后什么也不干  
-    }
-
-    // 如果leftText为空，则直接使用rightText生成URL    
-    if (leftText === '') {
-        var badgeUrl = 'https://img.shields.io/badge/' + encodeURIComponent(rightText) + '-' + textColor.replace(/[^a-zA-Z0-9]/g, '');
-    } else {
-        var badgeUrl = 'https://img.shields.io/badge/' + encodeURIComponent(leftText) + '-' + encodeURIComponent(rightText) + '-' + textColor.replace(/[^a-zA-Z0-9]/g, '');
-    }
-
-    if (logo != '') {
-        if (logoColor === '') {
-            badgeUrl = badgeUrl + '?style=' + style + '&logo=' + logo;
-        } else {
-            badgeUrl = badgeUrl + '?style=' + style + '&logo=' + logo + '&logoColor=' + logoColor.replace(/[^a-zA-Z0-9]/g, '');
+function g_url(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default") {
+    var url = "https://img.shields.io/badge/";
+    left += "-" || "";
+    if (right != "") {
+        url += left + right + "-" + color + "?style=" + style;
+        if (logo != "") {
+            url += "&logo=" + logo + "&logoColor=" + logoColor;
         }
-    } else {
-        badgeUrl = badgeUrl + '?style=' + style;
-    }
-
-    var html = '<a href="' + url + '"><img src="' + badgeUrl + '" alt="' + leftText + ' - ' + rightText + '"></a>';
-    var md = '![' + leftText + '](' + badgeUrl + ')';
-
-    document.getElementById('result-html').innerHTML = html;
-    if (url === '') {
-        html = '<a href="' + badgeUrl + '"><img src="' + badgeUrl + '" alt="' + leftText + ' - ' + rightText + '"></a>';
-        document.getElementById('result-html').innerHTML = html;
-        document.getElementById('result-pure').innerText = html;
-        document.getElementById('result-md').innerHTML = md;
-    } else {
-        if (!/^https?:\/\//.test(url)) {
-            url = "http://" + url;
-        }
-        html = '<a href="' + url + '"><img src="' + badgeUrl + '" alt="' + leftText + ' - ' + rightText + '"></a>';
-        document.getElementById('result-html').innerHTML = html;
-        document.getElementById('result-pure').innerText = html;
-        document.getElementById('result-md').innerText = "[" + md + "](" + url + ")";
+        return url;
     }
 }
 
-checkInput();
+function g_html(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
+    var url = g_url(left, right, color, style, logo, logoColor);
+    var html;
+    if (link !== "") {
+        if (!RegExp("^https?:\/\/").test(link)) {
+            link = "http://" + link;
+        }
+        html = '<a href="' + link + '"><img src="' + url + '"></a>';
+    } else {
+        html = "<img src=" + url + ">";
+    }
+    return html;
+}
+
+function g_md(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
+    var url = g_url(left, right, color, style, logo, logoColor);
+    var md;
+    if (link !== "") {
+        if (!RegExp("^https?:\/\/").test(link)) {
+            link = "http://" + link;
+        }
+        md = "[![](" + url + ")](" + link + ")";
+    } else {
+        md = "![](" + url + ")";
+    }
+    return md;
+}
+
+function auto() {
+    var logo = document.getElementById("logo").value;
+    var left = document.getElementById("left").value;
+    var right = document.getElementById("right").value;
+
+    var style = document.getElementById("style").value;
+    var logoColor = document.getElementById("logoColor").value;
+    console.log(logoColor);
+    var color = document.getElementById("color").value;
+    var link = document.getElementById("link").value;
+
+    var o_img = document.getElementById("o_img");
+    var o_url = document.getElementById("o_url");
+    var o_html = document.getElementById("o_html");
+    var o_md = document.getElementById("o_md");
+
+    if (color == "" || color == undefined) {
+        color = "green";
+    }
+    if (logoColor == "" || logoColor == undefined) {
+        logoColor = "green";
+    }
+
+    o_img.innerHTML = g_html(left, right, color, style, logo, logoColor, link)
+    o_url.innerHTML = "<pre><code>" + g_url(left, right, color, style, logo, logoColor).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>"
+    o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+}

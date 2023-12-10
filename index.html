@@ -1,111 +1,59 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <title>Shields Badge Generator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Shields-Maker</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <div align="middle">
-        <h1>Shields Badge Generator</h1>
-        <a href="http://github.com/dilemmaGX"><img src="https://img.shields.io/badge/Author-DilemmaGX-0059ff"
-                alt="Author - DilemmaGX"></a>
-        <a href="http://github.com/dilemmaGX/shields-maker"><img
-                src="https://img.shields.io/badge/Contribute-Shields--maker-0059ff" alt="Author - DilemmaGX"></a>
-        <label for="input-text">Left text:</label>
-        <input type="text" id="input-text" placeholder="Optional left text">
-        <label for="input-text-right">Right text:</label>
-        <input type="text" id="input-text-right" placeholder="Required right text" oninput="checkInput()">
-        <label for="input-color">Background color:</label>
-        <div class="selected-color" id="input-color"></div>
-        <label for="input-url">Link to:</label>
-        <input type="text" id="input-url" placeholder="Optional link url">
-        <label for="input-logo">Logo:</label>
-        <input type="text" id="input-logo" placeholder="Optional logo">
-        <label for="input-logo-color">Logo color:</label>
-        <div class="selected-color" id="input-logo-color"></div>
+    <div style="width: 40%; margin: auto; margin-top: 50px;">
+        <div align="middle">
+            <h1>Static Badge Maker</h1>
+            <a href="http://github.com/dilemmaGX"><img src="https://img.shields.io/badge/Author-DilemmaGX-0059ff"
+                    alt="Author - DilemmaGX"></a>
+            <a href="http://github.com/dilemmaGX/shields-maker"><img
+                    src="https://img.shields.io/badge/Contribute-Shields--maker-0059ff" alt="Author - DilemmaGX"></a>
+        </div>
         <br>
-        <select id="styleSelect">
-            <option value="flat">flat</option>
-            <option value="flat-square">flat-square</option>
-            <option value="plastic">plastic</option>
-            <option value="for-the-badge">for-the-badge</option>
-            <option value="social">social</option>
-        </select>
-        <button class="g_button" onclick="generateBadge()" id="g_button">Generate Badge</button>
-
-        <textarea id="copy-cache"></textarea>
-
-        <div class="result" id="result-html"><a href="http://github.com/DilemmaGX"><img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"></a></div>
-        <div class="result"><code id="result-pure">&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code><button class="c_button" title="Copy HTML" onclick="copyText('result-pure')"><?xml version="1.0" encoding="utf-8"?><svg width="16px" height="16px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.25005 8.5C8.25005 8.91421 8.58584 9.25 9.00005 9.25C9.41426 9.25 9.75005 8.91421 9.75005 8.5H8.25005ZM9.00005 8.267H9.75006L9.75004 8.26283L9.00005 8.267ZM9.93892 5.96432L10.4722 6.49171L9.93892 5.96432ZM12.2311 5V4.24999L12.2269 4.25001L12.2311 5ZM16.269 5L16.2732 4.25H16.269V5ZM18.5612 5.96432L18.0279 6.49171V6.49171L18.5612 5.96432ZM19.5 8.267L18.75 8.26283V8.267H19.5ZM19.5 12.233H18.75L18.7501 12.2372L19.5 12.233ZM18.5612 14.5357L18.0279 14.0083L18.5612 14.5357ZM16.269 15.5V16.25L16.2732 16.25L16.269 15.5ZM16 14.75C15.5858 14.75 15.25 15.0858 15.25 15.5C15.25 15.9142 15.5858 16.25 16 16.25V14.75ZM9.00005 9.25C9.41426 9.25 9.75005 8.91421 9.75005 8.5C9.75005 8.08579 9.41426 7.75 9.00005 7.75V9.25ZM8.73105 8.5V7.74999L8.72691 7.75001L8.73105 8.5ZM6.43892 9.46432L6.97218 9.99171L6.43892 9.46432ZM5.50005 11.767H6.25006L6.25004 11.7628L5.50005 11.767ZM5.50005 15.734L6.25005 15.7379V15.734H5.50005ZM8.73105 19L8.72691 19.75H8.73105V19ZM12.769 19V19.75L12.7732 19.75L12.769 19ZM15.0612 18.0357L14.5279 17.5083L15.0612 18.0357ZM16 15.733H15.25L15.2501 15.7372L16 15.733ZM16.75 15.5C16.75 15.0858 16.4143 14.75 16 14.75C15.5858 14.75 15.25 15.0858 15.25 15.5H16.75ZM9.00005 7.75C8.58584 7.75 8.25005 8.08579 8.25005 8.5C8.25005 8.91421 8.58584 9.25 9.00005 9.25V7.75ZM12.7691 8.5L12.7732 7.75H12.7691V8.5ZM15.0612 9.46432L15.5944 8.93694V8.93694L15.0612 9.46432ZM16.0001 11.767L15.2501 11.7628V11.767H16.0001ZM15.2501 15.5C15.2501 15.9142 15.5858 16.25 16.0001 16.25C16.4143 16.25 16.7501 15.9142 16.7501 15.5H15.2501ZM9.75005 8.5V8.267H8.25005V8.5H9.75005ZM9.75004 8.26283C9.74636 7.60005 10.0061 6.96296 10.4722 6.49171L9.40566 5.43694C8.65985 6.19106 8.24417 7.21056 8.25006 8.27117L9.75004 8.26283ZM10.4722 6.49171C10.9382 6.02046 11.5724 5.75365 12.2352 5.74999L12.2269 4.25001C11.1663 4.25587 10.1515 4.68282 9.40566 5.43694L10.4722 6.49171ZM12.2311 5.75H16.269V4.25H12.2311V5.75ZM16.2649 5.74999C16.9277 5.75365 17.5619 6.02046 18.0279 6.49171L19.0944 5.43694C18.3486 4.68282 17.3338 4.25587 16.2732 4.25001L16.2649 5.74999ZM18.0279 6.49171C18.494 6.96296 18.7537 7.60005 18.7501 8.26283L20.25 8.27117C20.2559 7.21056 19.8402 6.19106 19.0944 5.43694L18.0279 6.49171ZM18.75 8.267V12.233H20.25V8.267H18.75ZM18.7501 12.2372C18.7537 12.8999 18.494 13.537 18.0279 14.0083L19.0944 15.0631C19.8402 14.3089 20.2559 13.2894 20.25 12.2288L18.7501 12.2372ZM18.0279 14.0083C17.5619 14.4795 16.9277 14.7463 16.2649 14.75L16.2732 16.25C17.3338 16.2441 18.3486 15.8172 19.0944 15.0631L18.0279 14.0083ZM16.269 14.75H16V16.25H16.269V14.75ZM9.00005 7.75H8.73105V9.25H9.00005V7.75ZM8.72691 7.75001C7.6663 7.75587 6.65146 8.18282 5.90566 8.93694L6.97218 9.99171C7.43824 9.52046 8.07241 9.25365 8.73519 9.24999L8.72691 7.75001ZM5.90566 8.93694C5.15985 9.69106 4.74417 10.7106 4.75006 11.7712L6.25004 11.7628C6.24636 11.1001 6.50612 10.463 6.97218 9.99171L5.90566 8.93694ZM4.75005 11.767V15.734H6.25005V11.767H4.75005ZM4.75006 15.7301C4.73847 17.9382 6.51879 19.7378 8.72691 19.75L8.7352 18.25C7.35533 18.2424 6.2428 17.1178 6.25004 15.7379L4.75006 15.7301ZM8.73105 19.75H12.769V18.25H8.73105V19.75ZM12.7732 19.75C13.8338 19.7441 14.8486 19.3172 15.5944 18.5631L14.5279 17.5083C14.0619 17.9795 13.4277 18.2463 12.7649 18.25L12.7732 19.75ZM15.5944 18.5631C16.3402 17.8089 16.7559 16.7894 16.75 15.7288L15.2501 15.7372C15.2537 16.3999 14.994 17.037 14.5279 17.5083L15.5944 18.5631ZM16.75 15.733V15.5H15.25V15.733H16.75ZM9.00005 9.25H12.7691V7.75H9.00005V9.25ZM12.7649 9.24999C13.4277 9.25365 14.0619 9.52046 14.5279 9.99171L15.5944 8.93694C14.8486 8.18282 13.8338 7.75587 12.7732 7.75001L12.7649 9.24999ZM14.5279 9.99171C14.994 10.463 15.2537 11.1001 15.2501 11.7628L16.75 11.7712C16.7559 10.7106 16.3402 9.69106 15.5944 8.93694L14.5279 9.99171ZM15.2501 11.767V15.5H16.7501V11.767H15.2501Z" fill="#ffffff"/></svg></button></div>
-        <div class="result"><code id="result-md">[![Hello](https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff)](http://github.com/DilemmaGX)</code><button class="c_button" title="Copy Markdown" onclick="copyText('result-md')"><?xml version="1.0" encoding="utf-8"?><svg width="16px" height="16px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.25005 8.5C8.25005 8.91421 8.58584 9.25 9.00005 9.25C9.41426 9.25 9.75005 8.91421 9.75005 8.5H8.25005ZM9.00005 8.267H9.75006L9.75004 8.26283L9.00005 8.267ZM9.93892 5.96432L10.4722 6.49171L9.93892 5.96432ZM12.2311 5V4.24999L12.2269 4.25001L12.2311 5ZM16.269 5L16.2732 4.25H16.269V5ZM18.5612 5.96432L18.0279 6.49171V6.49171L18.5612 5.96432ZM19.5 8.267L18.75 8.26283V8.267H19.5ZM19.5 12.233H18.75L18.7501 12.2372L19.5 12.233ZM18.5612 14.5357L18.0279 14.0083L18.5612 14.5357ZM16.269 15.5V16.25L16.2732 16.25L16.269 15.5ZM16 14.75C15.5858 14.75 15.25 15.0858 15.25 15.5C15.25 15.9142 15.5858 16.25 16 16.25V14.75ZM9.00005 9.25C9.41426 9.25 9.75005 8.91421 9.75005 8.5C9.75005 8.08579 9.41426 7.75 9.00005 7.75V9.25ZM8.73105 8.5V7.74999L8.72691 7.75001L8.73105 8.5ZM6.43892 9.46432L6.97218 9.99171L6.43892 9.46432ZM5.50005 11.767H6.25006L6.25004 11.7628L5.50005 11.767ZM5.50005 15.734L6.25005 15.7379V15.734H5.50005ZM8.73105 19L8.72691 19.75H8.73105V19ZM12.769 19V19.75L12.7732 19.75L12.769 19ZM15.0612 18.0357L14.5279 17.5083L15.0612 18.0357ZM16 15.733H15.25L15.2501 15.7372L16 15.733ZM16.75 15.5C16.75 15.0858 16.4143 14.75 16 14.75C15.5858 14.75 15.25 15.0858 15.25 15.5H16.75ZM9.00005 7.75C8.58584 7.75 8.25005 8.08579 8.25005 8.5C8.25005 8.91421 8.58584 9.25 9.00005 9.25V7.75ZM12.7691 8.5L12.7732 7.75H12.7691V8.5ZM15.0612 9.46432L15.5944 8.93694V8.93694L15.0612 9.46432ZM16.0001 11.767L15.2501 11.7628V11.767H16.0001ZM15.2501 15.5C15.2501 15.9142 15.5858 16.25 16.0001 16.25C16.4143 16.25 16.7501 15.9142 16.7501 15.5H15.2501ZM9.75005 8.5V8.267H8.25005V8.5H9.75005ZM9.75004 8.26283C9.74636 7.60005 10.0061 6.96296 10.4722 6.49171L9.40566 5.43694C8.65985 6.19106 8.24417 7.21056 8.25006 8.27117L9.75004 8.26283ZM10.4722 6.49171C10.9382 6.02046 11.5724 5.75365 12.2352 5.74999L12.2269 4.25001C11.1663 4.25587 10.1515 4.68282 9.40566 5.43694L10.4722 6.49171ZM12.2311 5.75H16.269V4.25H12.2311V5.75ZM16.2649 5.74999C16.9277 5.75365 17.5619 6.02046 18.0279 6.49171L19.0944 5.43694C18.3486 4.68282 17.3338 4.25587 16.2732 4.25001L16.2649 5.74999ZM18.0279 6.49171C18.494 6.96296 18.7537 7.60005 18.7501 8.26283L20.25 8.27117C20.2559 7.21056 19.8402 6.19106 19.0944 5.43694L18.0279 6.49171ZM18.75 8.267V12.233H20.25V8.267H18.75ZM18.7501 12.2372C18.7537 12.8999 18.494 13.537 18.0279 14.0083L19.0944 15.0631C19.8402 14.3089 20.2559 13.2894 20.25 12.2288L18.7501 12.2372ZM18.0279 14.0083C17.5619 14.4795 16.9277 14.7463 16.2649 14.75L16.2732 16.25C17.3338 16.2441 18.3486 15.8172 19.0944 15.0631L18.0279 14.0083ZM16.269 14.75H16V16.25H16.269V14.75ZM9.00005 7.75H8.73105V9.25H9.00005V7.75ZM8.72691 7.75001C7.6663 7.75587 6.65146 8.18282 5.90566 8.93694L6.97218 9.99171C7.43824 9.52046 8.07241 9.25365 8.73519 9.24999L8.72691 7.75001ZM5.90566 8.93694C5.15985 9.69106 4.74417 10.7106 4.75006 11.7712L6.25004 11.7628C6.24636 11.1001 6.50612 10.463 6.97218 9.99171L5.90566 8.93694ZM4.75005 11.767V15.734H6.25005V11.767H4.75005ZM4.75006 15.7301C4.73847 17.9382 6.51879 19.7378 8.72691 19.75L8.7352 18.25C7.35533 18.2424 6.2428 17.1178 6.25004 15.7379L4.75006 15.7301ZM8.73105 19.75H12.769V18.25H8.73105V19.75ZM12.7732 19.75C13.8338 19.7441 14.8486 19.3172 15.5944 18.5631L14.5279 17.5083C14.0619 17.9795 13.4277 18.2463 12.7649 18.25L12.7732 19.75ZM15.5944 18.5631C16.3402 17.8089 16.7559 16.7894 16.75 15.7288L15.2501 15.7372C15.2537 16.3999 14.994 17.037 14.5279 17.5083L15.5944 18.5631ZM16.75 15.733V15.5H15.25V15.733H16.75ZM9.00005 9.25H12.7691V7.75H9.00005V9.25ZM12.7649 9.24999C13.4277 9.25365 14.0619 9.52046 14.5279 9.99171L15.5944 8.93694C14.8486 8.18282 13.8338 7.75587 12.7732 7.75001L12.7649 9.24999ZM14.5279 9.99171C14.994 10.463 15.2537 11.1001 15.2501 11.7628L16.75 11.7712C16.7559 10.7106 16.3402 9.69106 15.5944 8.93694L14.5279 9.99171ZM15.2501 11.767V15.5H16.7501V11.767H15.2501Z" fill="#ffffff"/></svg></button></div>
-
-        <script src="index.js"></script>
-
-        <script>
-            document.getElementById("input-color").style.backgroundColor = "blue";
-        </script>
-
-        <script>
-            const selectedColor0 = document.getElementById("input-logo-color");
-            selectedColor0.addEventListener('click', function () {
-                const colorInput = document.createElement("input");
-                colorInput.type = "color";
-                colorInput.addEventListener('input', function () {
-                    const color = colorInput.value;
-                    selectedColor0.style.backgroundColor = color;
-                });
-
-                const colorList = document.createElement("datalist");
-                const colorOptions = [
-                    "#ff0000",  // 红色
-                    "#00ff00",  // 绿色
-                    "#0000ff",  // 蓝色
-                    "#ffff00",  // 黄色
-                    "#ff00ff"   // 紫色
-                ];
-                colorOptions.forEach(function (option) {
-                    const optionElement = document.createElement("option");
-                    optionElement.value = option;
-                    colorList.appendChild(optionElement);
-                });
-                colorInput.setAttribute("list", "color-options");
-                colorList.id = "color-options";
-                colorInput.appendChild(colorList);
-
-                colorInput.click();
-            });
-            const selectedColor1 = document.getElementById("input-color");
-            selectedColor1.addEventListener('click', function () {
-                const colorInput = document.createElement("input");
-                colorInput.type = "color";
-                colorInput.addEventListener('input', function () {
-                    const color = colorInput.value;
-                    selectedColor1.style.backgroundColor = color;
-                });
-
-                const colorList = document.createElement("datalist");
-                const colorOptions = [
-                    "#ff0000",  // 红色
-                    "#00ff00",  // 绿色
-                    "#0000ff",  // 蓝色
-                    "#ffff00",  // 黄色
-                    "#ff00ff"   // 紫色
-                ];
-                colorOptions.forEach(function (option) {
-                    const optionElement = document.createElement("option");
-                    optionElement.value = option;
-                    colorList.appendChild(optionElement);
-                });
-                colorInput.setAttribute("list", "color-options");
-                colorList.id = "color-options";
-                colorInput.appendChild(colorList);
-
-                colorInput.click();
-            });
-        </script>
+        <div class="input-group input-group">
+            <input id="logo" style="width: 20%" type="text" class="form-control" placeholder="Logo">
+            <input id="left" style="width: 20%" type="text" class="form-control" placeholder="Left Text">
+            <input id="right" style="width: 50%" type="text" class="form-control" placeholder="Right Text">
+        </div>
+        <br>
+        <div class="input-group mb-3">
+            <select style="width: 25%;" id="style" class="form-select" aria-label="Default select example">
+                <option value="flat" selected>Flat</option>
+                <option value="flat-square">Flat-Square</option>
+                <option value="plastic">Plastic</option>
+                <option value="for-the-badge">For-The-Badge</option>
+                <option value="social">Social</option>
+            </select>
+            <input id="logoColor" style="width: 25%" type="text" class="form-control" placeholder="Logo Color">
+            <input id="color" style="width: 25%" type="text" class="form-control" placeholder="Theme Color">
+            <input id="link" style="width: 25%" type="text" class="form-control" placeholder="URL">
+        </div>
+        <br>
+        <div align="middle">
+            <button type="button" class="btn btn-primary" style="width: 150px;" onclick="auto()">Generate</button>
+            <br><br>
+            <div id="o_img" class="img">
+                <a href="http://github.com/DilemmaGX"><img
+                        src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff"
+                        alt="Hello - World"></a>
+            </div><br>
+            <div id="o_url" class="url">
+                <pre><code>https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
+            </div>
+            <div id="o_html" class="html">
+                <pre><code>&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code></pre>
+            </div>
+            <div id="o_md" class="md">
+                <pre><code>[![Hello](https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff)](http://github.com/DilemmaGX)</code></pre>
+            </div>
+        </div>
     </div>
 </body>
-
-</html>
