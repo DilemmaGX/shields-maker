@@ -19,5 +19,5 @@
 - [x] URL
 - [x] markdown
 - [ ] rSt
-- [ ] AsciiDoc
+- [x] AsciiDoc
 - [x] html

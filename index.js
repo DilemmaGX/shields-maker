@@ -38,6 +38,20 @@ function g_md(left = "", right, color = "default", style = "flat", logo = "", lo
     return md;
 }
 
+function g_ad(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link){
+    var url = g_url(left, right, color, style, logo, logoColor);
+    var ad;
+    if (link !== "") {
+        if (!RegExp("^https?:\/\/").test(link)) {
+            link = "http://" + link;
+        }
+        ad = link + "[image:" + url + "[Static Badge]]";
+    } else {
+        ad = "image:" + url + "[Static Badge]";
+    }
+    return ad;
+}
+
 function auto() {
     var logo = document.getElementById("logo").value;
     var left = document.getElementById("left").value;
@@ -53,6 +67,7 @@ function auto() {
     var o_url = document.getElementById("o_url");
     var o_html = document.getElementById("o_html");
     var o_md = document.getElementById("o_md");
+    var o_ad = document.getElementById("o_ad");
 
     if (color == "" || color == undefined) {
         color = "default";
@@ -65,6 +80,7 @@ function auto() {
     o_url.innerHTML = "<pre><code>" + g_url(left, right, color, style, logo, logoColor).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>"
     o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
     o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_ad.innerHTML = "<pre><code>" + g_ad(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
 }
 
 function copy(id) {
