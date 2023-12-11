@@ -16,7 +16,7 @@
 
 <div align="middle"><h2>Output Coverage</h2></div>
 
-- [ ] URL
+- [x] URL
 - [x] markdown
 - [ ] rSt
 - [ ] AsciiDoc
