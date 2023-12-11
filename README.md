@@ -21,5 +21,3 @@
 - [ ] rSt
 - [ ] AsciiDoc
 - [x] html
-
-<iframe style="position: absolute; width: 100%; height: 100%; left: 0; top: 0; border-radius:10px;" src="https://dilemmagx.github.io/shields-maker" frameborder="1" scrolling="yes" width="320" height="240"</iframe>
