@@ -38,7 +38,7 @@ function g_md(left = "", right, color = "default", style = "flat", logo = "", lo
     return md;
 }
 
-function g_ad(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link){
+function g_ad(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
     var url = g_url(left, right, color, style, logo, logoColor);
     var ad;
     if (link !== "") {
