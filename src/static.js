@@ -109,7 +109,7 @@ function copy(id) {
 
 function addSuccessAlertSuccess(str) {
     const newAlertDiv = document.createElement('div');
-    newAlertDiv.className = 'alert alert-success alert-dismissible fade show';
+    newAlertDiv.className = 'alert alert-success alert-dismissible';
     newAlertDiv.role = 'alert';
     const svgIcon = document.createElement('svg');
     svgIcon.className = 'bi flex-shrink-0 me-2';
