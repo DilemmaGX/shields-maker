@@ -55,10 +55,10 @@ function auto() {
     var o_md = document.getElementById("o_md");
 
     if (color == "" || color == undefined) {
-        color = "green";
+        color = "default";
     }
     if (logoColor == "" || logoColor == undefined) {
-        logoColor = "green";
+        logoColor = "default";
     }
 
     o_img.innerHTML = g_html(left, right, color, style, logo, logoColor, link)
