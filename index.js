@@ -52,6 +52,21 @@ function g_ad(left = "", right, color = "default", style = "flat", logo = "", lo
     return ad;
 }
 
+function g_rst(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
+    var url = g_url(left, right, color, style, logo, logoColor);
+    var rst;
+    if (link !== "") {
+        if (!RegExp("^https?:\/\/").test(link)) {
+            link = "http://" + link;
+        }
+        //link not supported
+        rst = ".. image:: " + url ;
+    } else {
+        rst = ".. image:: " + url ;
+    }
+    return rst;
+}
+
 function auto() {
     var logo = document.getElementById("logo").value;
     var left = document.getElementById("left").value;
@@ -68,6 +83,7 @@ function auto() {
     var o_html = document.getElementById("o_html");
     var o_md = document.getElementById("o_md");
     var o_ad = document.getElementById("o_ad");
+    var o_rst = document.getElementById("o_rst");
 
     if (color == "" || color == undefined) {
         color = "default";
@@ -81,6 +97,7 @@ function auto() {
     o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
     o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
     o_ad.innerHTML = "<pre><code>" + g_ad(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_rst.innerHTML = "<pre><code>" + g_rst(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;')+ "</pre></code>";
 }
 
 function copy(id) {

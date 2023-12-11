@@ -71,20 +71,24 @@
             <div id="o_url" class="url">
                 <pre><code>https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
             </div>
-            <div id="o_html" class="html">
-                <pre><code>&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code></pre>
-            </div>
             <div id="o_md" class="md">
                 <pre><code>[![Hello](https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff)](http://github.com/DilemmaGX)</code></pre>
             </div>
-            <div id="o_ad" class="md">
+            <div id="o_rst" class="rst">
+                <pre><code>.. image:: https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
+            </div>
+            <div id="o_ad" class="ad">
                 <pre><code>http://github.com/dilemmagx[image:https://img.shields.io/badge/Hello-World-ff9900?style=flat&logo=github&logoColor=ffffff[Static Badge]]</code></pre>
+            </div>
+            <div id="o_html" class="html">
+                <pre><code>&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://img.shields.io/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code></pre>
             </div>
             <div class="btn-group" role="group" aria-label="Copy">
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_url')">Copy URL</button>
-                <button type="button" class="btn btn-outline-primary" onclick="copy('o_html')">Copy HTML</button>
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_md')">Copy MD</button>
+                <button type="button" class="btn btn-outline-primary" onclick="copy('o_rst')">Copy rSt</button>
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_ad')">Copy AsciiDoc</button>
+                <button type="button" class="btn btn-outline-primary" onclick="copy('o_html')">Copy HTML</button>
             </div>
         </div>
     </div>
