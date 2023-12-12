@@ -4,20 +4,25 @@
 
 <div align="middle"><h2>Parameters Coverage<h2></div>
 
-- [x] `badgeContent`
-- [x] `style`
-- [x] `logo`
-- [x] `logoColor`
-- [ ] `label`
-- [ ] `labelColor`
-- [x] `color`
-- [ ] `cacheSeconds`
-- [x] `link`
+`badgeContent`
+`style`
+`logo`
+`logoColor`
+~~`label`~~
+~~`labelColor`~~
+`color`
+~~`cacheSeconds`~~
+`link`
 
 <div align="middle"><h2>Output Coverage</h2></div>
 
-- [x] URL
-- [x] markdown
-- [x] rSt
-- [x] AsciiDoc
-- [x] html
+`URL`
+`markdown`
+`rSt`
+`AsciiDoc`
+`html`
+
+> [!NOTE]  
+> Link support for `rSt` is missing. This means that you **CANNOT** click on the badge to redirect to the page you added in the parameters.
+>
+> If you are willing to add link support for `rSt`, please **PULL REQUEST**.
