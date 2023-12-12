@@ -1,5 +1,5 @@
 function g_url(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default") {
-    var url = "https://img.shields.io/badge/";
+    var url = "https://custom-icon-badges.demolab.com/badge/";
     left += "-" || "";
     if (right != "") {
         url += left + right + "-" + color + "?style=" + style;
