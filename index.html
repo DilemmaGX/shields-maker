@@ -45,7 +45,6 @@
             <input id="color" style="width: 25%" type="text" class="form-control" placeholder="Theme Color">
             <input id="link" style="width: 25%" type="text" class="form-control" placeholder="URL">
         </div>
-        <br>
         <div align="middle">
             <button id="g_button" type="button" class="btn btn-primary" style="width: 150px; " onclick="auto()"
                 disabled>Generate</button>
@@ -55,27 +54,33 @@
                         src="https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff"
                         alt="Hello - World"></a>
             </div><br>
-            <div id="o_url" class="url">
-                <pre><code>https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
-            </div>
-            <div id="o_md" class="md">
-                <pre><code>[![Hello](https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff)](http://github.com/DilemmaGX)</code></pre>
-            </div>
-            <div id="o_rst" class="rst">
-                <pre><code>.. image:: https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
-            </div>
-            <div id="o_ad" class="ad">
-                <pre><code>http://github.com/dilemmagx[image:https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&logo=github&logoColor=ffffff[Static Badge]]</code></pre>
-            </div>
-            <div id="o_html" class="html">
-                <pre><code>&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code></pre>
-            </div>
             <div class="btn-group" role="group" aria-label="Copy">
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_url')">Copy URL</button>
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_md')">Copy MD</button>
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_rst')">Copy rSt</button>
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_ad')">Copy AsciiDoc</button>
                 <button type="button" class="btn btn-outline-primary" onclick="copy('o_html')">Copy HTML</button>
+            </div>
+            <br><br>
+            <div id="o_url" class="url">
+                <h4>URL</h4>
+                <pre><code style="white-space: pre-wrap;word-wrap: break-word;">https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
+            </div>
+            <div id="o_md" class="md">
+                <h4>Markdown</h4>
+                <pre><code style="white-space: pre-wrap;word-wrap: break-word;">[![Hello](https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff)](http://github.com/DilemmaGX)</code></pre>
+            </div>
+            <div id="o_rst" class="rst">
+                <h4>rSt</h4>
+                <pre><code style="white-space: pre-wrap;word-wrap: break-word;">.. image:: https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff</code></pre>
+            </div>
+            <div id="o_ad" class="ad">
+                <h4>AsciiDoc</h4>
+                <pre><code style="white-space: pre-wrap;word-wrap: break-word;">http://github.com/dilemmagx[image:https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&logo=github&logoColor=ffffff[Static Badge]]</code></pre>
+            </div>
+            <div id="o_html" class="html">
+                <h4>HTML</h4>
+                <pre><code style="white-space: pre-wrap;word-wrap: break-word;">&lt;a href="http://github.com/DilemmaGX"&gt;&lt;img src="https://custom-icon-badges.demolab.com/badge/Hello-World-ff9900?style=flat&amp;logo=github&amp;logoColor=ffffff" alt="Hello - World"&gt;&lt;/a&gt;</code></pre>
             </div>
         </div>
     </div>
