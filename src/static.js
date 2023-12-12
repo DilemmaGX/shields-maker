@@ -85,6 +85,9 @@ function auto() {
     var o_ad = document.getElementById("o_ad");
     var o_rst = document.getElementById("o_rst");
 
+    left = left.replace(/[-_]/g, m => m === '-' ? '--' : '__').replace(/\s/g, '_');
+    right = right.replace(/[-_]/g, m => m === '-' ? '--' : '__').replace(/\s/g, '_');
+
     if (color == "" || color == undefined) {
         color = "default";
     }
