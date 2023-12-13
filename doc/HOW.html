@@ -1,0 +1,55 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div style="margin: 50px;">
+        <h3>How to use it</h3>
+        <hr>
+
+        <h4>Introduction</h4>
+        <p>
+            This repo (<code>shileds-maker</code>) is a project to help <strong>non-programmers</strong> and
+            <strong>programmers</strong> to generate basic static badge easily. The badge generator is based on
+            <a href="https://github.com/DenverCoder1/custom-icon-badges"><img
+                    src="https://custom-icon-badges.demolab.com/badge/Core-custom--icon--badges-0059ff?logo=cpu"
+                    alt="core"></a>
+            , an enhanced version of shields.io badges, supporting Octions and Feather icons.
+        </p>
+        <p>
+            Page designed with <code>Bootstrap v5.3.2</code>.
+        </p>
+
+        <h4>User Interface</h4>
+        <p>
+            The user interface is basically composited of two parts: <strong><code>Generator</code></strong> and
+            <strong><code>Quick Reference</code></strong>.
+        </p>
+        <p>
+            The Generator part basically handles the main generation functions to generate a badge. For This version,
+            the Generate supports <code>URL</code>, <code>Markdown</code>, <code>rSt</code>, <code>AsciiDoc</code>, and
+            <code>HTML</code>. Note that rSt isn't fully supported: third-party links cannot be inserted. If you are
+            looking forward to support this feature, please <strong>PULL REQUEST</strong> on Github.
+        </p>
+        <p>
+            The Quick Reference (QR) contains five iframe elements in current version. The QR contains a doc tab (this
+            document), Shields.io Cite, and three icon libraries, supported by the Generator.
+        </p>
+
+        <h4>Generator</h4>
+        <p>
+            To generate a badge, a <code>Right text</code> is required. Other components are optional, for more details,
+            see <code>Shields.io Cite</code> tab.
+        <div class="alert alert-primary" role="alert">
+            <h4>Note</h4>
+            <hr>
+            In the original badge core, some characters are transcript differently in the url, but the core of
+            this project is able to convert these characters, so you don't have to worry about this.
+        </div>
+        </p>
+    </div>
+</body>
