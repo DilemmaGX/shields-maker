@@ -24,7 +24,8 @@
 <img src="https://custom-icon-badges.demolab.com/badge/Markdown-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/rSt-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/AsciiDoc-Supported-mediumseagreen?style=flat-square" alt="">
-<img src="https://custom-icon-badges.demolab.com/badge/HTML-Supported-mediumseagreen?style=flat-square" alt=""></p></div>
+<img src="https://custom-icon-badges.demolab.com/badge/HTML-Supported-mediumseagreen?style=flat-square" alt="">
+<img src="https://custom-icon-badges.demolab.com/badge/BBCode-Supported-mediumseagreen?style=flat-square" alt=""></p></div>
 
 > [!NOTE]  
 > Link support for `rSt` is missing. This means that you **CANNOT** click on the badge to redirect to the page you added in the parameters.
