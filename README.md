@@ -1,5 +1,9 @@
 <div align="middle"><h1>Shields-maker</h1></div>
-<div align="middle"><a href="https://github.com/DilemmaGX/shields-maker/blob/main/LICENSE"><img alt="GitHub License"src="https://custom-icon-badges.demolab.com/badge/License-GPL--3.0-orange.svg?logo=law&style=flat-square"></a></div>
+<div align="middle"><a href="https://github.com/DilemmaGX/shields-maker/blob/main/LICENSE">
+<img alt="GitHub License"src="https://custom-icon-badges.demolab.com/badge/License-GPL--3.0-orange.svg?logo=law&style=flat-square">
+<img src="https://custom-icon-badges.demolab.com/github/last-commit/DilemmaGX/shields-maker?style=flat-square&logo=history&logoColor=white">
+<img src="https://custom-icon-badges.demolab.com/github/languages/code-size/DilemmaGX/shields-maker?style=flat-square&logo=file-code&logoColor=white">
+</a></div>
 <div align="middle"><i></i>Make and preview simple static badges url, html, markdown scripts for non-programmer users</i></div>
 
 <div align="middle"><h2>Parameters Coverage<h2>
