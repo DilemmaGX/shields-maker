@@ -101,11 +101,11 @@ function auto() {
     }
 
     o_img.innerHTML = g_html(left, right, color, style, logo, logoColor, link, source);
-    o_url.innerHTML = "<pre><code>" + g_url(left, right, color, style, logo, logoColor, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_ad.innerHTML = "<pre><code>" + g_ad(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_rst.innerHTML = "<pre><code>" + g_rst(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;')+ "</pre></code>";
+    o_url.innerHTML = "<pre><code style=\"white-space: pre-wrap;word-wrap: break-word;\">" + g_url(left, right, color, style, logo, logoColor, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_html.innerHTML = "<pre><code style=\"white-space: pre-wrap;word-wrap: break-word;\">" + g_html(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_md.innerHTML = "<pre><code style=\"white-space: pre-wrap;word-wrap: break-word;\">" + g_md(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_ad.innerHTML = "<pre><code style=\"white-space: pre-wrap;word-wrap: break-word;\">" + g_ad(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_rst.innerHTML = "<pre><code style=\"white-space: pre-wrap;word-wrap: break-word;\">" + g_rst(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;')+ "</pre></code>";
 }
 
 function copy(id) {
