@@ -1,5 +1,5 @@
 <div align="middle"><h1>Shields-maker</h1></div>
-<div align="middle"><a href="https://github.com/DilemmaGX/shields-maker/blob/main/LICENSE">
+<div align="middle"><a href="https://github.com/DilemmaGX/shields-maker">
 <img alt="GitHub License"src="https://custom-icon-badges.demolab.com/badge/License-GPL--3.0-orange.svg?logo=law&style=flat-square">
 <img src="https://custom-icon-badges.demolab.com/github/last-commit/DilemmaGX/shields-maker?style=flat-square&logo=history&logoColor=white">
 <img src="https://custom-icon-badges.demolab.com/github/languages/code-size/DilemmaGX/shields-maker?style=flat-square&logo=file-code&logoColor=white">
