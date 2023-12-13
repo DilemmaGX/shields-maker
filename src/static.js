@@ -63,8 +63,7 @@ function g_rst(left = "", right, color = "default", style = "flat", logo = "", l
         if (!RegExp("^https?:\/\/").test(link)) {
             link = "http://" + link;
         }
-        //link not supported
-        rst = ".. image:: " + url ;
+        rst = ".. image:: " + url + "\n   :target: " + link;
     } else {
         rst = ".. image:: " + url ;
     }

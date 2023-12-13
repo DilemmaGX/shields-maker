@@ -12,8 +12,8 @@
 <img src="https://custom-icon-badges.demolab.com/badge/style-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/logo-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/logoColor-Supported-mediumseagreen?style=flat-square" alt="">
-<img src="https://custom-icon-badges.demolab.com/badge/color-Supported-mediumseagreen?style=flat-square" alt=""></p>
-<p><img src="https://custom-icon-badges.demolab.com/badge/link-Partly_Supported-orange?style=flat-square" alt=""></p>
+<img src="https://custom-icon-badges.demolab.com/badge/color-Supported-mediumseagreen?style=flat-square" alt="">
+<img src="https://custom-icon-badges.demolab.com/badge/link-Supported-mediumseagreen?style=flat-square" alt=""></p>
 <p><img src="https://custom-icon-badges.demolab.com/badge/label-Unsupported-ff0000?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/labelColor-Unsupported-ff0000?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/cacheSeconds-Unsupported-ff0000?style=flat-square" alt=""></p></div>
@@ -22,7 +22,7 @@
 
 <p><img src="https://custom-icon-badges.demolab.com/badge/URL-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/Markdown-Supported-mediumseagreen?style=flat-square" alt="">
-<img src="https://custom-icon-badges.demolab.com/badge/rSt-Partly_Supported-orange?style=flat-square" alt="">
+<img src="https://custom-icon-badges.demolab.com/badge/rSt-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/AsciiDoc-Supported-mediumseagreen?style=flat-square" alt="">
 <img src="https://custom-icon-badges.demolab.com/badge/HTML-Supported-mediumseagreen?style=flat-square" alt=""></p></div>
 
