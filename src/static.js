@@ -1,4 +1,4 @@
-function g_url(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default") {
+function g_url(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", source="default") {
     var url = "https://custom-icon-badges.demolab.com/badge/";
     left += "-" || "";
     if (right != "") {
@@ -6,12 +6,16 @@ function g_url(left = "", right, color = "default", style = "flat", logo = "", l
         if (logo != "") {
             url += "&logo=" + logo + "&logoColor=" + logoColor;
         }
-        return url;
+        if(source!="default"){
+            return url+"&logoSource="+source;
+        } else {
+            return url;
+        }
     }
 }
 
-function g_html(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
-    var url = g_url(left, right, color, style, logo, logoColor);
+function g_html(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link, source="default") {
+    var url = g_url(left, right, color, style, logo, logoColor,source);
     var html;
     if (link !== "") {
         if (!RegExp("^https?:\/\/").test(link)) {
@@ -19,13 +23,13 @@ function g_html(left = "", right, color = "default", style = "flat", logo = "", 
         }
         html = '<a href="' + link + '"><img src="' + url + '"></a>';
     } else {
-        html = "<img src=" + url + ">";
+        html = '<img src="' + url + '">';
     }
     return html;
 }
 
-function g_md(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
-    var url = g_url(left, right, color, style, logo, logoColor);
+function g_md(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link, source="default") {
+    var url = g_url(left, right, color, style, logo, logoColor,source);
     var md;
     if (link !== "") {
         if (!RegExp("^https?:\/\/").test(link)) {
@@ -38,8 +42,8 @@ function g_md(left = "", right, color = "default", style = "flat", logo = "", lo
     return md;
 }
 
-function g_ad(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
-    var url = g_url(left, right, color, style, logo, logoColor);
+function g_ad(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link, source="default") {
+    var url = g_url(left, right, color, style, logo, logoColor,source);
     var ad;
     if (link !== "") {
         if (!RegExp("^https?:\/\/").test(link)) {
@@ -52,8 +56,8 @@ function g_ad(left = "", right, color = "default", style = "flat", logo = "", lo
     return ad;
 }
 
-function g_rst(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link) {
-    var url = g_url(left, right, color, style, logo, logoColor);
+function g_rst(left = "", right, color = "default", style = "flat", logo = "", logoColor = "default", link, source="default") {
+    var url = g_url(left, right, color, style, logo, logoColor,source);
     var rst;
     if (link !== "") {
         if (!RegExp("^https?:\/\/").test(link)) {
@@ -77,6 +81,7 @@ function auto() {
     console.log(logoColor);
     var color = document.getElementById("color").value;
     var link = document.getElementById("link").value;
+    var source = document.getElementById("source").value;
 
     var o_img = document.getElementById("o_img");
     var o_url = document.getElementById("o_url");
@@ -95,12 +100,12 @@ function auto() {
         logoColor = "default";
     }
 
-    o_img.innerHTML = g_html(left, right, color, style, logo, logoColor, link)
-    o_url.innerHTML = "<pre><code>" + g_url(left, right, color, style, logo, logoColor).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>"
-    o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_ad.innerHTML = "<pre><code>" + g_ad(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
-    o_rst.innerHTML = "<pre><code>" + g_rst(left, right, color, style, logo, logoColor, link).replace(/</g, '&lt;').replace(/>/g, '&gt;')+ "</pre></code>";
+    o_img.innerHTML = g_html(left, right, color, style, logo, logoColor, link, source);
+    o_url.innerHTML = "<pre><code>" + g_url(left, right, color, style, logo, logoColor, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_html.innerHTML = "<pre><code>" + g_html(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_md.innerHTML = "<pre><code>" + g_md(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_ad.innerHTML = "<pre><code>" + g_ad(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;') + "</pre></code>";
+    o_rst.innerHTML = "<pre><code>" + g_rst(left, right, color, style, logo, logoColor, link, source).replace(/</g, '&lt;').replace(/>/g, '&gt;')+ "</pre></code>";
 }
 
 function copy(id) {
