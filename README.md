@@ -28,6 +28,6 @@
 <img src="https://custom-icon-badges.demolab.com/badge/BBCode-Supported-mediumseagreen?style=flat-square" alt=""></p></div>
 
 > [!NOTE]  
-> Link support for `rSt` is missing. This means that you **CANNOT** click on the badge to redirect to the page you added in the parameters.
->
-> If you are willing to add link support for `rSt`, please **PULL REQUEST**.
+> Some scripts are note written as it should be (well, basically I copy pasted some scripts from Bootstrap's doc, so some elements have "example" tags or something like that).
+> 
+> If you are looking forward to rebuild this repo, please hit **PULL REQUEST**
